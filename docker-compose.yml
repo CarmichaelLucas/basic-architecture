@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: ./docker/api.dockerfile
+    container_name: active_record_api
+    image: udemy/active_record
+    volumes:
+      - ./:/var/www/api
+    ports:
+      - 3131:3131
+    tty: true
